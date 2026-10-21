@@ -1,3 +1,15 @@
+type OnlineUser = {
+  username: string;
+  status: "online" | "offline";
+  lastActivity: number;
+};
+
+type OnlineUsersOverview = {
+  online?: string[];
+  offline?: string[];
+  away?: string[];
+};
+
 const showOnlineStatus = (users: OnlineUser[]): OnlineUsersOverview => {
   if (users.length === 0) {
     return {};
@@ -58,18 +70,6 @@ const testInputOne: OnlineUser[] = [
 // }
 
 const testInputTwo: OnlineUser[] = []; // {}
-
-type OnlineUser = {
-  username: string;
-  status: "online" | "offline";
-  lastActivity: number;
-};
-
-type OnlineUsersOverview = {
-  online?: string[];
-  offline?: string[];
-  away?: string[];
-};
 
 console.log(showOnlineStatus(testInputOne));
 console.log(showOnlineStatus(testInputTwo));
