@@ -1,6 +1,6 @@
-// #region constants.ts
-
 import { cursorTo, clearScreenDown } from "readline";
+
+// #region constants.ts
 
 /** Number of rows and columns in the square grid. */
 const GRID_SIZE = 50;
