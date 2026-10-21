@@ -1,3 +1,4 @@
+import { clearScreenDown, cursorTo } from "node:readline";
 import { ANIMATION_DELAY } from "./constants";
 import { getNextGeneration } from "./simulation";
 import { getGrid } from "./grid";
@@ -30,7 +31,10 @@ const gameOfLife = (updateCount: number): void => {
     generation++;
     const nextGrid = getNextGeneration(currentGrid);
     currentGrid = nextGrid;
-    console.clear();
+    // console.clear();
+
+    cursorTo(process.stdout, 0, 0);
+    clearScreenDown(process.stdout);
     renderGrid(currentGrid);
 
     if (generation === updateCount) {
